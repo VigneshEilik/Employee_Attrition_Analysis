@@ -50,7 +50,7 @@ if page == "Overview":
     st.write(df.head())
 
     st.metric("Total Employees", len(df))
-    predicted_attrition_rate = df["Attrition"].value_counts(normalize=True).get("Yes", 0)
+    predicted_attrition_rate = df["Attrition"].value_counts(normalize=True).get(1, 0)
     st.metric("Predicted Attrition Rate:", round(predicted_attrition_rate*100, 2), "%")
 
     # print("Predicted Attrition Rate:", round(predicted_attrition_rate*100, 2), "%")
